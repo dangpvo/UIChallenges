@@ -15,7 +15,7 @@
 body {
   height: 100vh;
   background: linear-gradient(to right, var(--clr-main), #3d8880);
-  font-family: var(--ff-pop);
+  font-family: "Poppins", sans-serif;
 }
 
 .card {

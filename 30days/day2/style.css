@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --clr-card: #272d40;
+  --clr-main: #4daf54;
+  --clr-border: #f2726a;
+  --ff-pop: "Poppins", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(to right, var(--clr-main), #3d8880);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-family: "Poppins", sans-serif;
+}
+
+.card {
+  width: 300px;
+  height: 400px;
+  background-color: var(--clr-card);
+  border-radius: 15px;
+  color: white;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card-img {
+  width: 120px;
+  height: 120px;
+  border: 4px solid var(--clr-border);
+  border-radius: 50%;
+  overflow: hidden;
+  margin-inline: auto;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  transition: 0.5s;
+}
+
+.card-img:hover {
+  width: 100%;
+  height: 100%;
+  margin-top: 0;
+  border-radius: unset;
+  border: none;
+}
+
+.card p {
+  color: var(--clr-border);
+}
+
+.card-social {
+  margin: 25px 0;
+}
+
+.card-social a {
+  color: white;
+  margin: 25px 15px;
+  font-size: 20px;
+  transition: 0.5s;
+}
+
+.card-social a:hover {
+  color: var(--clr-border);
+}
+
+.card button {
+  width: 150px;
+  height: 40px;
+  border: 1px solid var(--clr-border);
+  border-radius: 5px;
+  background: transparent;
+  color: white;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.card button:hover {
+  background-color: var(--clr-border);
+  color: white;
+}
