@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --clr-main: #ecf0f1;
+  --clr-success: #197500;
+  --clr-success-light: #8fbe98;
+  --clr-warning: #fb9a04;
+  --clr-warning-light: #f2cd9b;
+  --clr-error: #bf281c;
+  --clr-error-light: #f19097;
+  --ff-pop: "Poppins", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  background-color: var(--clr-main);
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  width: 170px;
+  font-size: 20px;
+  padding-inline: 10px;
+  padding-block: 10px;
+  margin-inline: 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  color: white;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.btn:hover {
+  transform: scale(0.9);
+}
+
+.btn.success {
+  background-color: var(--clr-success);
+}
+
+.btn.warning {
+  background-color: var(--clr-warning);
+}
+
+.btn.error {
+  background-color: var(--clr-error);
+}
+
+.toast-wrapper {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+
+.toast {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 15px 20px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  color: white;
+  animation: slideshow 5s ease forwards;
+}
+
+.toast i {
+  font-size: 30px;
+  margin-right: 10px;
+}
+
+.toast.success {
+  background: var(--clr-success-light);
+  border-left: 5px solid var(--clr-success);
+}
+
+.toast.warning {
+  background: var(--clr-warning-light);
+  border-left: 5px solid var(--clr-warning);
+}
+
+.toast.error {
+  background: var(--clr-error-light);
+  border-left: 5px solid var(--clr-error);
+}
+
+.toast .countdown {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  animation: countdown 10s ease;
+}
+
+.toast.success .countdown {
+  border: 2px solid var(--clr-success);
+}
+
+.toast.warning .countdown {
+  border: 2px solid var(--clr-warning);
+}
+
+.toast.error .countdown {
+  border: 2px solid var(--clr-error);
+}
+
+@keyframes countdown {
+  0% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0;
+  }
+}
+
+.show-toast {
+  animation: slideshow 5s ease forwards;
+}
+
+.hide-toast {
+  animation: slidehide 5s ease forwards;
+}
+
+@keyframes slideshow {
+  0% {
+    transform: translateX(100%);
+  }
+  25% {
+    transform: translateX(-10%);
+  }
+  50% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-10%);
+  }
+}
+
+@keyframes slidehide {
+  0% {
+    transform: translateX(-10%);
+  }
+  25% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(-10%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
