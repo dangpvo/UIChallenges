@@ -62,8 +62,47 @@ body {
 #slider::-webkit-slider-thumb {
   appearance: none;
   height: 50px;
-  width: 0px;
+  width: 50px;
   background: transparent;
-  /* border-radius: 50%; */
+  border-radius: 50%;
   border: 2px solid white;
+}
+
+input[type="password"]::-ms-reveal {
+  display: none;
+  /* background-color: red; */
+  /* color: #08609a !important; */
+}
+
+input[type="password"]::-ms-clear {
+  display: none;
+  /* background-color: red; */
+  /* color: #08609a !important; */
+}
+
+input[type="password"]::-webkit-textfield-decoration-container {
+  display: none;
+}
+
+input[type="password"]::-webkit-credentials-auto-fill-button {
+  display: none !important;
+  visibility: hidden;
+}
+
+.testDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.testDiv input {
+  margin: 0;
+  height: 100%;
+}
+
+.testDiv span {
+  width: 25px;
+  color: red;
+  margin-left: 5px;
 }
