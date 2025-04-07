@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --clr-card: #adadad;
+  --clr-main: #3ca7ee;
+  --clr-succeed: #2691d9;
+  --clr-succeed-dark: #242628;
+  --clr-sub: #9b408f;
+  --ff-pop: "Poppins", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+section {
+  height: 100vh;
+}
+
+.home {
+  background: linear-gradient(to right, var(--clr-main), var(--clr-sub));
+  color: white;
+  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home h1 {
+  font-size: 50px;
+  margin-bottom: 30px;
+}
+
+.home .description {
+  font-size: 20px;
+}
+
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding-inline: 100px;
+}
+
+.box {
+  width: 500px;
+  height: 200px;
+  background: var(--clr-succeed-dark);
+  padding: 20px;
+  color: white;
+  border-radius: 10px;
+}
+
+.box .title {
+  font-size: 50px;
+}
+
+.box .description {
+  font-size: 20px;
+}
+
+.team {
+  background: linear-gradient(180deg, var(--clr-main) 50%, var(--clr-sub) 50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.member {
+  width: 250px;
+  height: 300px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.member .name {
+  color: #017c2c;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.left-to-right {
+  transform: translateX(-130%);
+  transition: 1s;
+}
+
+.right-to-left {
+  transform: translateX(130%);
+  transition: 1s;
+}
+
+.left-to-right.start,
+.right-to-left.start {
+  transform: translateX(0);
+}
+
+.zoom-in {
+  transform: scale(0);
+  transition: 1s;
+}
+
+.zoom-in.start {
+  transform: scale(1);
+}
