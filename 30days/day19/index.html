@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 19</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="tool">
+      <input type="color" id="color" />
+      <button id="eraser">
+        <i class="bx bx-eraser"></i>
+      </button>
+      <button id="decrease">-</button>
+      <div id="size">5</div>
+      <button id="increase">+</button>
+      <button id="clear">
+        <i class="bx bx-window-close"></i>
+      </button>
+      <a id="save" download="untitle.png">
+        <i class="bx bxs-save"></i>
+      </a>
+    </div>
+    <div class="container">
+      <canvas width="1500" height="900"></canvas>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
