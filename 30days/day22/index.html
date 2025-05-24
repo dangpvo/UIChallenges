@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 22</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- There are 2 options to implement filter -->
+    <!-- Option 1: Using CSS to display none all un-related items, good performance for fixed data -->
+    <!-- Option 2: Using JS to arr.filter to redraw the items, easy to maintain, scalable with dynamic data and other features like sort,... -->
+    <div class="control">
+      <button>All</button>
+      <button>Salad</button>
+      <button>Meat</button>
+      <button>Drinks</button>
+      <button>Dessert</button>
+    </div>
+
+    <div class="container">
+      <img src="img/dessert1.jpg" alt="" />
+      <img src="img/drinks1.jpg" alt="" />
+      <img src="img/drinks2.jpg" alt="" />
+      <img src="img/drinks3.jpg" alt="" />
+      <img src="img/meat1.jpg" alt="" />
+      <img src="img/meat2.jpg" alt="" />
+      <img src="img/salad1.jpg" alt="" />
+      <img src="img/salad2.jpg" alt="" />
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
