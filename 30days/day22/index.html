@@ -14,23 +14,41 @@
     <!-- There are 2 options to implement filter -->
     <!-- Option 1: Using CSS to display none all un-related items, good performance for fixed data -->
     <!-- Option 2: Using JS to arr.filter to redraw the items, easy to maintain, scalable with dynamic data and other features like sort,... -->
-    <div class="control">
-      <button>All</button>
-      <button>Salad</button>
-      <button>Meat</button>
-      <button>Drinks</button>
-      <button>Dessert</button>
-    </div>
-
     <div class="container">
-      <img src="img/dessert1.jpg" alt="" />
-      <img src="img/drinks1.jpg" alt="" />
-      <img src="img/drinks2.jpg" alt="" />
-      <img src="img/drinks3.jpg" alt="" />
-      <img src="img/meat1.jpg" alt="" />
-      <img src="img/meat2.jpg" alt="" />
-      <img src="img/salad1.jpg" alt="" />
-      <img src="img/salad2.jpg" alt="" />
+      <div class="control">
+        <button type="all" class="active">All</button>
+        <button type="salad">Salad</button>
+        <button type="meat">Meat</button>
+        <button type="drink">Drinks</button>
+        <button type="dessert">Dessert</button>
+      </div>
+
+      <div class="food-container">
+        <div class="food">
+          <img src="img/dessert1.jpg" alt="" type="dessert" />
+        </div>
+        <div class="food">
+          <img src="img/drinks1.jpg" alt="" type="drink" />
+        </div>
+        <div class="food">
+          <img src="img/drinks2.jpg" alt="" type="drink" />
+        </div>
+        <div class="food">
+          <img src="img/drinks3.jpg" alt="" type="drink" />
+        </div>
+        <div class="food">
+          <img src="img/meat1.jpg" alt="" type="meat" />
+        </div>
+        <div class="food">
+          <img src="img/meat2.jpg" alt="" type="meat" />
+        </div>
+        <div class="food">
+          <img src="img/salad1.jpg" alt="" type="salad" />
+        </div>
+        <div class="food">
+          <img src="img/salad2.jpg" alt="" type="salad" />
+        </div>
+      </div>
     </div>
 
     <script src="script.js"></script>
