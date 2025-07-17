@@ -6,27 +6,37 @@
   padding: 0;
 }
 
-img {
+body {
+  height: 100vh;
+  background: #dadada;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.zoomer {
+  display: flex;
+  gap: 100px;
+}
+
+.zoomer img {
   width: 500px;
   height: 500px;
   object-fit: cover;
-}
-
-#result {
-  border: 1px solid black;
-  width: 200px;
-  height: 200px;
-  position: fixed;
-  transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  cursor: zoom-in;
 }
 
 #mirror {
   width: 250px;
   height: 250px;
-  background-image: url("./bike1.jpg");
-  background-size: 1000px 1000px;
+  border-radius: 50%;
   position: fixed;
   transform: translate(-50%, -50%);
-  transition: 0.2s;
-  border-radius: 50%;
+  pointer-events: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+.hide {
+  display: none;
 }
