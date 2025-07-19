@@ -8,13 +8,97 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(145deg, var(--clr-primary), white 80%);
   display: flex;
   justify-content: center;
   align-items: center;
+  background: rgb(197, 233, 255);
+}
+
+.card {
+  width: 700px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.card-img {
+  width: 250px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-info h2 {
+  margin-bottom: 5px;
+  font-size: 25px;
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+}
+
+.card-info p {
+  font-size: 16px;
+  min-height: 100px;
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  flex: 1;
+}
+
+.card-info button {
+  height: 40px;
+  min-width: 100px;
+  max-width: 150px;
+  padding-inline: 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  color: white;
+  cursor: pointer;
+}
+
+.loading {
+  background: #aaa;
+  position: relative;
+  overflow: hidden;
+}
+
+.loading::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to right, rgba(113, 96, 96, 0.7), transparent);
+  animation: loading-wave linear 1s infinite;
+  transform: translateX(-100%);
+}
+
+@keyframes loading-wave {
+  100% {
+    transform: translateX(100%);
+  }
 }
