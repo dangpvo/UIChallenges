@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --clr-facebook: #3b5999;
+  --clr-instagram: #e1306c;
+  --clr-github: #333;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: #dadada;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+  background: white;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  position: relative;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.icon i {
+  font-size: 40px;
+}
+
+.tooltip {
+  position: absolute;
+  height: 50px;
+  padding-inline: 30px;
+  line-height: 50px;
+  border-radius: 25px;
+  color: white;
+  transition: all 0.5s;
+  opacity: 0;
+  top: 0;
+  pointer-events: none;
+}
+
+.tooltip::before {
+  content: "";
+  display: block;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%) rotate(45deg);
+}
+
+.icon.facebook:hover,
+.icon.facebook .tooltip,
+.icon.facebook .tooltip::before {
+  background: var(--clr-facebook);
+  color: white;
+}
+
+.icon.instagram:hover,
+.icon.instagram .tooltip,
+.icon.instagram .tooltip::before {
+  background: var(--clr-instagram);
+  color: white;
+}
+
+.icon.github:hover,
+.icon.github .tooltip,
+.icon.github .tooltip::before {
+  background: var(--clr-github);
+  color: white;
+}
+
+.icon:hover .tooltip {
+  top: -70px;
+  opacity: 1;
+}
