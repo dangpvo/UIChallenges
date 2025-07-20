@@ -48,8 +48,8 @@ A collection of frontend UI challenges designed to enhance and showcase skills i
 | Day 23 | **Zoom Image Effect**            |
 | Day 24 | **Hover Board**                  |
 | Day 25 | **Customer Video Play**          |
-| Day 26 | **Validate Password**            |
-| Day 27 | **Tooltip**                      |
+| Day 26 | **Validate Password Input**      |
+| Day 27 | **Tooltip Effect**               |
 | Day 28 | **Skeleton Loading Effect**      |
-| Day 29 | **Play Piano**                   |
+| Day 29 | **Virtual Piano Keyboard**       |
 | Day 30 | **Simple Carousel**              |
