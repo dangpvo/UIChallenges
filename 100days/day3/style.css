@@ -1,0 +1,197 @@
+:root {
+  --clr-bg: #272c34;
+  --clr-sky: #7ddffc;
+  --clr-ground: #f0de75;
+  --clr-sun: #ffef00;
+  --clr-pyramid: #f4f4f4;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Courier New", Courier, monospace;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 400px;
+  height: 400px;
+  background-color: var(--clr-bg);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  width: 180px;
+  height: 180px;
+  clip-path: circle(
+    90px at 50% 50%
+  ); /*hình tròn bán kính 90px, tâm tại x, y là 50% 50%*/
+  position: relative;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.sky {
+  position: absolute;
+  height: 125px;
+  width: 100%;
+  background-color: var(--clr-sky);
+  animation: sky-dark 5s infinite ease-in-out;
+}
+
+.sun {
+  width: 35px;
+  height: 35px;
+  background-color: var(--clr-sun);
+  position: absolute;
+  top: 7px;
+  left: 80px;
+  transform-origin: 50% 400%; /*chỉnh tâm điểm gốc (x, y) từ 50% 50% về 50% 400% */
+  border-radius: 50%;
+  animation: sun-down 5s infinite ease-in-out;
+}
+
+.ground {
+  position: absolute;
+  height: 55px;
+  width: 100%;
+  background-color: var(--clr-ground);
+  bottom: 0;
+  animation: ground-dark 5s infinite ease-in-out;
+}
+
+.left {
+  position: absolute;
+  width: 115px;
+  height: 60px;
+  bottom: 55px;
+  left: 35px;
+  clip-path: polygon(
+    50% 0%,
+    100% 100%,
+    0% 100%
+  ); /*hình đa giác, tam giác với cặp x y theo thứ tự*/
+  background-color: var(--clr-pyramid);
+  animation: pyramid-shade 5s infinite ease-in-out;
+}
+
+.right {
+  position: absolute;
+  background-color: #ddd;
+  clip-path: polygon(0% 0%, 100% 100%, 30% 100%);
+  width: 60px;
+  height: 60px;
+  bottom: 55px;
+  left: 93px;
+  animation: pyramid-shade 5s infinite reverse ease-in-out;
+}
+
+.shadow {
+  position: absolute;
+  z-index: 1;
+  height: 30px;
+  width: 360px;
+  background-color: rgba(0, 0, 0, 0.3);
+  bottom: 25px;
+  left: -80px;
+  clip-path: polygon(115px 0%, 231px 0%, 80% 100%);
+  transform-origin: 50% 0;
+  animation: shadow-move 5s infinite ease-in-out;
+}
+
+@keyframes sky-dark {
+  0% {
+    background-color: var(--clr-bg);
+  }
+  30% {
+    background-color: var(--clr-sky);
+  }
+  70% {
+    background-color: var(--clr-sky);
+  }
+  100% {
+    background-color: var(--clr-bg);
+  }
+}
+
+@keyframes sun-down {
+  0% {
+    background-color: red;
+    transform: rotate(-70deg);
+  }
+  30% {
+    background-color: var(--clr-sun);
+    transform: rotate(-20deg);
+  }
+  70% {
+    background-color: var(--clr-sun);
+  }
+  80% {
+    background-color: darkorange;
+  }
+  100% {
+    background-color: red;
+    transform: rotate(70deg);
+  }
+}
+
+@keyframes pyramid-shade {
+  0% {
+    background-color: var(--clr-bg);
+  }
+  30% {
+    background-color: var(--clr-pyramid);
+  }
+  70% {
+    background-color: #ddd;
+  }
+  100% {
+    background-color: var(--clr-bg);
+  }
+}
+
+@keyframes shadow-move {
+  0% {
+    transform: scaleY(0);
+  }
+  30% {
+    transform: scaleY(1);
+    clip-path: polygon(115px 0%, 231px 0%, 80% 100%);
+  }
+  55% {
+    transform: scaleY(0.4);
+  }
+  75% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(0);
+    clip-path: polygon(115px 0%, 231px 0%, 0% 100%);
+  }
+}
+
+@keyframes ground-dark {
+  0% {
+    background-color: var(--clr-bg);
+  }
+  30% {
+    background-color: var(--clr-ground);
+  }
+  70% {
+    background-color: var(--clr-ground);
+  }
+  100% {
+    background-color: var(--clr-bg);
+  }
+}
