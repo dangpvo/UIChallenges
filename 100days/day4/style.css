@@ -1,0 +1,98 @@
+:root {
+  --clr-bg: #e56262;
+  --clr-dot: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Courier New", Courier, monospace;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 400px;
+  height: 400px;
+  background-color: var(--clr-bg);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.dot-1 {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: var(--clr-dot);
+  border-radius: 50px;
+  z-index: 2;
+  animation-fill-mode: both;
+  animation: jump-1 3s infinite alternate ease-in-out;
+}
+
+.dot-2 {
+  position: absolute;
+  background-color: var(--clr-dot);
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  z-index: 1;
+  animation-fill-mode: both;
+  animation: jump-2 3s infinite alternate ease-in-out;
+}
+
+.dot-3 {
+  position: absolute;
+  background-color: var(--clr-dot);
+  width: 90px;
+  height: 90px;
+  border-radius: 100%;
+  animation-fill-mode: both;
+  animation: jump-3 3s infinite alternate ease-in-out;
+}
+
+@keyframes jump-1 {
+  0%,
+  70% {
+    box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.2);
+    transform: scale(0);
+  }
+  100% {
+    box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.2);
+    transform: scale(1);
+  }
+}
+
+@keyframes jump-2 {
+  0%,
+  40% {
+    box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.2);
+    transform: scale(0);
+  }
+  100% {
+    box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.2);
+    transform: scale(1);
+  }
+}
+
+@keyframes jump-3 {
+  0%,
+  10% {
+    box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.2);
+    transform: scale(0);
+  }
+  100% {
+    box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.2);
+    transform: scale(1);
+  }
+}
