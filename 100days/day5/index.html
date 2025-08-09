@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS100 - Day 5</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="panel">
+        <div class="panel-header">
+          <div class="panel-header-left">
+            <p class="panel-title">Weekly Report</p>
+            <p class="panel-subtitle fsmall">08 May - 14 May</p>
+          </div>
+          <div class="panel-header-right">
+            <p class="panel-revenue fsmall">Revenue</p>
+            <p class="panel-revenue-val">$ 3621.76</p>
+          </div>
+        </div>
+        <div class="panel-body">
+          <div class="panel-parameters">
+            <p class="para-blue">values</p>
+            <p class="para-red">purchase</p>
+          </div>
+          <div class="panel-graph">
+            <div class="line-1"></div>
+            <div class="line-2"></div>
+            <div class="line-3"></div>
+            <div class="data red">
+              <svg>
+                <polyline
+                  points="9,46 50,12 90,23 130,11 171,38 211,48 251,19"
+                ></polyline>
+              </svg>
+              <div class="points">
+                <div class="point-1">
+                  <div class="tooltip">458</div>
+                </div>
+                <div class="point-2">
+                  <div class="tooltip">812</div>
+                </div>
+                <div class="point-3">
+                  <div class="tooltip">746</div>
+                </div>
+                <div class="point-4">
+                  <div class="tooltip">877</div>
+                </div>
+                <div class="point-5">
+                  <div class="tooltip">517</div>
+                </div>
+                <div class="point-6">
+                  <div class="tooltip">434</div>
+                </div>
+                <div class="point-7">
+                  <div class="tooltip">458</div>
+                </div>
+              </div>
+            </div>
+            <div class="data blue">
+              <svg>
+                <polyline
+                  points="9,61 50,50 90,65 130,55 171,61 211,74 251,64"
+                ></polyline>
+              </svg>
+              <div class="points">
+                <div class="point-1">
+                  <div class="tooltip">26</div>
+                </div>
+                <div class="point-2">
+                  <div class="tooltip">41</div>
+                </div>
+                <div class="point-3">
+                  <div class="tooltip">22</div>
+                </div>
+                <div class="point-4">
+                  <div class="tooltip">36</div>
+                </div>
+                <div class="point-5">
+                  <div class="tooltip">25</div>
+                </div>
+                <div class="point-6">
+                  <div class="tooltip">13</div>
+                </div>
+                <div class="point-7">
+                  <div class="tooltip">20</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="panel-days">
+            <span class="day">Mon</span>
+            <span class="day">Tue</span>
+            <span class="day">Wed</span>
+            <span class="day">Thu</span>
+            <span class="day">Fri</span>
+            <span class="day">Sat</span>
+            <span class="day">Sun</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

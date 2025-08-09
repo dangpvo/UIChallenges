@@ -1,0 +1,264 @@
+:root {
+  --clr-bg: #42a7a1;
+  --clr-orange: #f1ba64;
+  --clr-red: #fa7373;
+  --clr-blue: #2c6bff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Courier New", Courier, monospace;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 400px;
+  height: 400px;
+  background-color: var(--clr-bg);
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 50px;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
+}
+
+.panel-header {
+  background-color: var(--clr-orange);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 10px;
+  padding-block: 10px;
+  font-size: 20px;
+}
+
+.fsmall {
+  font-size: 14px;
+}
+
+.panel-body {
+  flex: 1;
+  background-color: white;
+  padding: 10px;
+}
+
+.panel-parameters {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.para-red::before {
+  content: "";
+  width: 20px;
+  height: 4px;
+  background-color: var(--clr-red);
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.para-blue::before {
+  content: "";
+  width: 20px;
+  height: 4px;
+  background-color: var(--clr-blue);
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.panel-graph {
+  position: relative;
+  height: 80px;
+  width: 270px;
+  margin: 0 auto;
+}
+
+.panel-graph .line-1,
+.panel-graph .line-2,
+.panel-graph .line-3 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #f2f2f2;
+}
+
+.panel-graph .line-1 {
+  top: 0;
+}
+
+.panel-graph .line-2 {
+  top: 40px;
+}
+
+.panel-graph .line-3 {
+  top: 80px;
+}
+
+.panel-graph .data svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.panel-graph .data polyline {
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.panel-graph .data.red polyline {
+  stroke: var(--clr-red);
+}
+
+.panel-graph .data.blue polyline {
+  stroke: var(--clr-blue);
+}
+
+.panel-graph .data .tooltip {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translate3d(-50%, 10px, 0);
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 11px;
+  color: #fff;
+  padding: 8px 6px;
+  border-radius: 3px;
+  visibility: hidden;
+  opacity: 0;
+  transition: transform 0.4s ease-out 0s, opacity 0.4s ease-out 0s;
+}
+
+.panel-graph .data .tooltip:after {
+  position: absolute;
+  display: block;
+  content: "";
+  height: 6px;
+  width: 6px;
+  left: 50%;
+  margin-left: -3px;
+  bottom: -3px;
+  transform: rotate(45deg);
+}
+
+.panel-graph .data [class^="point-"] {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.panel-graph .data [class^="point-"]:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+  transform: translate3d(-50%, 0, 0);
+}
+
+/* Red set */
+.panel-graph .data.red [class^="point-"],
+.panel-graph .data.red .tooltip,
+.panel-graph .data.red .tooltip:after {
+  background: var(--clr-red);
+}
+
+.panel-graph .data.red .point-1 {
+  left: 7px;
+  top: 43px;
+}
+.panel-graph .data.red .point-2 {
+  left: 48px;
+  top: 9px;
+}
+.panel-graph .data.red .point-3 {
+  left: 88px;
+  top: 20px;
+}
+.panel-graph .data.red .point-4 {
+  left: 128px;
+  top: 8px;
+}
+.panel-graph .data.red .point-5 {
+  left: 169px;
+  top: 35px;
+}
+.panel-graph .data.red .point-6 {
+  left: 209px;
+  top: 45px;
+}
+.panel-graph .data.red .point-7 {
+  left: 249px;
+  top: 16px;
+}
+
+/* Blue set */
+.panel-graph .data.blue [class^="point-"],
+.panel-graph .data.blue .tooltip,
+.panel-graph .data.blue .tooltip:after {
+  background: var(--clr-blue);
+}
+
+.panel-graph .data.blue .point-1 {
+  left: 7px;
+  top: 58px;
+}
+.panel-graph .data.blue .point-2 {
+  left: 48px;
+  top: 47px;
+}
+.panel-graph .data.blue .point-3 {
+  left: 88px;
+  top: 62px;
+}
+.panel-graph .data.blue .point-4 {
+  left: 128px;
+  top: 52px;
+}
+.panel-graph .data.blue .point-5 {
+  left: 169px;
+  top: 58px;
+}
+.panel-graph .data.blue .point-6 {
+  left: 209px;
+  top: 71px;
+}
+.panel-graph .data.blue .point-7 {
+  left: 249px;
+  top: 61px;
+}
+
+/* Days */
+.panel-days {
+  width: 280px;
+  margin: 0 auto;
+}
+
+.panel-days .day {
+  display: block;
+  float: left;
+  width: calc(100% / 7);
+  font-size: 14px;
+  line-height: 30px;
+  text-transform: uppercase;
+  text-align: center;
+}
