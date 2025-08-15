@@ -1,0 +1,281 @@
+:root {
+  --clr-main: #5f98cd;
+  --clr-main-dark: #264057;
+  --clr-main-light: #b2daff;
+  --clr-text-1: #666;
+  --clr-text-2: #93b2cd;
+  --clr-line: #ebebeb;
+  --clr-side: #43627d;
+  --clr-side-2: #385269;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Courier New", Courier, monospace;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 400px;
+  height: 400px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
+  background-color: var(--clr-main-dark);
+  color: var(--clr-text-1);
+  overflow: hidden;
+  position: relative;
+}
+
+.panel {
+  position: absolute;
+  z-index: 2;
+  height: 320px;
+  width: 300px;
+  top: 50px;
+  left: 50px;
+  background-color: white;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
+  transition: all 0.5s ease-in-out;
+}
+
+.panel.show-menu {
+  transform: translate3d(150px, 0, 0);
+}
+
+.panel .header {
+  height: 60px;
+  width: 100%;
+  background-color: var(--clr-main);
+}
+
+.panel .header .menu-icon {
+  position: absolute;
+  width: 30px;
+  height: 15px;
+  top: 23px;
+  left: 20px;
+  cursor: pointer;
+}
+
+.panel .header .menu-icon:hover .dash-top,
+.panel .header .menu-icon:hover .dash-bottom,
+.panel .header .menu-icon:hover .circle {
+  background-color: white;
+}
+
+.panel .header .menu-icon .dash-top {
+  position: absolute;
+  width: 20px;
+  height: 3px;
+  top: 0;
+  left: 0;
+  background-color: var(--clr-main-light);
+  border-radius: 3px;
+  transition: all 0.2s ease-in-out;
+}
+
+.panel .header .menu-icon .dash-bottom {
+  position: absolute;
+  width: 29px;
+  height: 3px;
+  top: auto;
+  bottom: 0;
+  background-color: var(--clr-main-light);
+  border-radius: 3px;
+}
+
+.panel .header .menu-icon .circle {
+  position: absolute;
+  top: -2px;
+  right: 0;
+  height: 7px;
+  width: 7px;
+  border-radius: 4px;
+  background-color: var(--clr-main-light);
+}
+
+.panel .header .title {
+  display: block;
+  text-align: center;
+  line-height: 60px;
+  color: white;
+  font-weight: 600px;
+  font-size: 15px;
+}
+
+.panel .header .search-input {
+  box-sizing: border-box;
+  position: absolute;
+  top: 13px;
+  right: 55px;
+  width: 230px;
+  height: 34px;
+  border-radius: 17px;
+  border: none;
+  background-color: white;
+  padding: 0 17px;
+  font-size: 13px;
+  color: var(--clr-text-1);
+  transition: all 0.3s ease-in-out;
+  transform: translate3d(15px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.panel .header .search-input:focus {
+  outline: none;
+}
+
+.panel .header .search-input.active {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: all;
+}
+
+.panel .header .search-icon {
+  position: absolute;
+  z-index: 2;
+  font-size: 21px;
+  color: var(--clr-main-light);
+  top: 18px;
+  right: 20px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.panel .header .search-icon:hover {
+  color: white;
+}
+
+.panel .notifications {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+
+.panel .notifications .line {
+  position: absolute;
+  top: 0;
+  left: 27px;
+  bottom: 0;
+  width: 3px;
+  background-color: var(--clr-line);
+}
+
+.panel .notifications .noti {
+  position: relative;
+  z-index: 2;
+  margin: 25px 20px 25px 43px;
+}
+
+.panel .notifications .noti:nth-child(2),
+.panel .notifications .noti:nth-child(3),
+.panel .notifications .noti:nth-child(4) {
+  animation: here 0.5s ease-out forwards;
+}
+
+.panel .notifications .noti:hover {
+  color: var(--clr-main);
+  cursor: pointer;
+}
+
+.panel .notifications .noti .circle {
+  box-sizing: border-box;
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  background-color: white;
+  border: 2px solid var(--clr-main);
+  box-shadow: 0 0 0 3px white;
+  border-radius: 6px;
+  top: 0;
+  left: -20px;
+}
+
+.panel .notifications .noti .time {
+  display: block;
+  font-size: 11px;
+  line-height: 11px;
+  margin-bottom: 2px;
+}
+
+.panel .notifications .noti p {
+  font-size: 15px;
+  line-height: 20px;
+  margin: 0;
+}
+
+.panel .notifications .noti p b {
+  font-weight: 600;
+}
+
+.menu {
+  position: absolute;
+  width: 170px;
+  height: 270px;
+  top: 65px;
+  left: 50px;
+  background-color: var(--clr-side);
+  border-radius: 3px;
+  transition: all 0.5s ease-in-out;
+  transform: translate3d(20px, 0, 0);
+}
+
+.menu.active {
+  box-shadow: 5px 5px 8px 0 rgba(0, 0, 0, 0.2);
+  transform: translate3d(0, 0, 0);
+}
+
+.menu ul {
+  margin: 0;
+  padding: 10px 0;
+}
+
+.menu ul li {
+  color: var(--clr-text-2);
+  margin: 0;
+  padding: 18px 17px;
+  list-style: none;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu ul li:hover {
+  color: white;
+  background: var(--clr-side-2);
+}
+
+.menu ul li i {
+  display: block;
+  float: left;
+  margin-right: 8px;
+  margin-top: -1px;
+}
+
+.menu ul li .bx-cog,
+.menu ul li .bx-user,
+.menu ul li .bx-bell {
+  margin-top: 0;
+}
+
+@keyframes here {
+  from {
+    transform: translate3d(0, 50px, 0);
+    opacity: 0;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
